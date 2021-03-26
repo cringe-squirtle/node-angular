@@ -1,0 +1,104 @@
+.video-section {
+    
+    display: flex;
+    justify-content: space-between;
+    margin:auto;
+    margin-top: 96px;
+}
+
+.youtube{
+
+}
+
+.add-list-btn{
+    
+}
+
+.video-detail{
+    color:rgba(255, 255, 255, 0.741);
+    font-size: 1.2vw;
+}
+
+.tagline{
+    font-style: italic;
+}
+
+.star{
+    font-size: 16px;
+}
+
+.add-list-alert{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2vw;
+}
+
+.alert-cross{
+    cursor: pointer;
+}
+
+.description-section, .share, .cast, .reviews{
+    margin:auto;
+    margin-top: 24px;
+}
+
+.cast{
+    margin-top: 36px;
+}
+
+.overview{
+    color:rgba(255, 255, 255, 0.741);
+}
+
+.share-icon{
+    font-size: 18px;
+    margin: 4px 4px 4px 4px;
+}
+
+.cast-wrapper{
+    color:black;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-top: 1%;
+    scrollbar-color: white black;
+}
+
+  
+.cast-wrapper::-webkit-scrollbar {
+    width: 1px !important;             
+    height: 8px;
+}
+  
+.cast-wrapper::-webkit-scrollbar-track {
+    background: rgb(75, 75, 75);
+    border-radius: 10px;
+     
+}
+
+.cast-wrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(181, 181, 181);    
+    border-radius: 10px;       
+}
+.cast-wrapper::-webkit-scrollbar-thumb:hover {
+    background-color: lightgray;    
+}
+.cast-wrapper::-webkit-scrollbar-thumb:focus-visible {
+    background-color: rgb(255, 255, 255);    
+}
+
+.cast-prime{
+/* display: flex; */
+    white-space: nowrap;
+    padding-bottom: 64px;
+}
+
+.cast-total{
+    display: inline-block;
+}
+
+
+
+.reviews-wrapper{
+    margin-top: 12px;
+}

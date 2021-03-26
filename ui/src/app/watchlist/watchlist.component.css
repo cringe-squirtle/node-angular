@@ -1,0 +1,49 @@
+.watchlist-section{
+    display: flex;
+    
+    margin:auto;
+    margin-top: 64px;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.watchlist-title{
+    margin:auto
+}
+
+.watchlist-wrapper{
+    width: 100%;
+    display:flex;
+    justify-content: space-around;    
+    margin-bottom: 32px;
+}
+
+.img{    
+    transition: transform .2s;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+    
+    width: 100%;
+    height: 100%;
+}
+
+.img:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+}
+
+.image-title{
+    -webkit-box-shadow: 0px -1vh 2vh 1vw #000; 
+    box-shadow: 0px -1vh 2vh 1vw #000;
+    
+    position: absolute;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    color:white;
+}

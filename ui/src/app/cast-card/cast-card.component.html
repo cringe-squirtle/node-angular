@@ -1,0 +1,10 @@
+<div class="cast-box" [ngStyle]="{
+    'background-image':'url('+param.cast.profile+')',
+    'font-size': 'calc(7vw / '+param.size+')'
+}" (click)="open()">
+    <div class="cast-text">
+        <b>{{param.cast.title}}</b>
+        <div><b>AS</b></div>
+        <div style="white-space:normal">{{param.cast.character}}</div>
+    </div>
+</div>

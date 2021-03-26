@@ -1,0 +1,19 @@
+<ngb-carousel #carousel [interval]="500000000" [pauseOnHover]="pauseOnHover" [pauseOnFocus]="pauseOnFocus"
+    (slide)="onSlide($event)" id='current-playing-movies-wrapper' [ngStyle]="{
+        'width':hoverOff ? '95vw':'72vw',
+        'padding': hoverOff? '0px 12px' : '0px 60px'
+    }">
+    <ng-template ngbSlide *ngFor="let movie of current_playing_movies; index as i">
+        <a [routerLink]="['watch/movie/'+movie.id]">
+            <div class="current-playing-movies-item" [ngStyle]="{
+            'width': '100%',
+            'height': hoverOff? 'calc('+movie.height / movie.width+' * 72vw * 1.2)':'calc('+movie.height / movie.width+' * 72vw * 0.6)',
+            'background-image': 'url('+movie.image+')'    
+        }" (mouseenter)='setHover(i)' (mouseleave)='clearHover(i)'>
+                <!-- <img [src]='movie.image' class='current-playing-movies-img'> -->
+                <div class='movie-title' *ngIf="movieHover[i]"><span>{{movie.title}}</span>
+                </div>
+            </div>
+        </a>
+    </ng-template>
+</ngb-carousel>

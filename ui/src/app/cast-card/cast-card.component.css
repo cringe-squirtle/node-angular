@@ -1,0 +1,48 @@
+.cast-box{
+    border: black solid 1px;
+    
+    transition: transform .2s;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
+
+.cast-text{
+    background-color: white;
+    text-align: center;
+    min-height: 40%;
+    margin-bottom: -40%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    
+}
+
+.cast-des{
+    background-color: gray;
+    /* height: 70%; */
+}
+
+.black{
+    color:black
+}
+
+.modal-window{
+    width:64vw;
+}
+
+.modal-xl .modal-lg {
+    max-width: max-content;
+    width: 80vw;
+    margin-left: 10vw;
+  }

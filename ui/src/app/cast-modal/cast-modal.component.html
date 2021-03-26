@@ -1,0 +1,51 @@
+<div class="modal-header black">
+    <h4 class="modal-title" *ngIf="title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body black ">
+    <div class="content-wrapper" [ngStyle]="{
+    'flex-direction':screen_big? 'row':'column'
+    }">
+        <img src="{{param.profile}}" alt="{{title}}" [ngStyle]="{
+            'width':screen_big ? '25%':'100%',
+            'height':'auto'
+        }">
+        <div class='detail' [ngStyle]="{
+            'width':screen_big?'70%':'100%'
+        }">
+            <div *ngIf="birthday">Birth: {{birthday}}</div>
+            <div *ngIf="birthplace">Birth Place: {{birthplace}}</div>
+            <div *ngIf="gender">Gender: {{gender}}</div>
+
+            <div *ngIf="homepage">Website: <a href="{{homepage}}" style="color: #007bff;"
+                    target="_blank">{{homepage}}</a></div>
+
+            <div *ngIf="kfd">Known For: {{kfd}}</div>
+            <div *ngIf="aka">Also Known As: {{aka}}</div>
+            <br>
+            <a class="external-icon" style="color: #f3ce13;" ngbPopover="Visit IMDB" triggers="mouseenter:mouseleave"
+                target="_blank" *ngIf="external_imdb.display" href="{{external_imdb.url}}">
+                <i class="fab fa-imdb"></i>
+            </a>
+            <a class="external-icon" style="color: #bc2a8d;" ngbPopover="Visit Instagram" target="_blank"
+                triggers="mouseenter:mouseleave" *ngIf="external_ins.display" href="{{external_ins.url}}">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="external-icon" style="color: #0000ff;" ngbPopover="Visit FaceBook" target="_blank"
+                triggers="mouseenter:mouseleave" *ngIf="external_fb.display" href="{{external_fb.url}}">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a class="external-icon" style="color: #1DA1F2;" ngbPopover="Visit Twitter" triggers="mouseenter:mouseleave"
+                target="_blank" *ngIf="external_twt.display" href="{{external_twt.url}}">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="bio">
+        <h2>Biography</h2>
+        {{bio}}
+    </div>
+</div>

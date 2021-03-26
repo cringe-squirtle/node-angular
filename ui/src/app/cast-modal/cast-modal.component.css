@@ -1,0 +1,19 @@
+.black{
+    color: black;
+}
+
+.content-wrapper{
+    width: 100%;
+    margin: auto;    
+    display: flex;
+}
+
+.detail{
+    margin-left: 5%;
+    display: inline-block;
+}
+
+.external-icon{
+    font-size: 28px;
+    margin-right: 8px;
+}

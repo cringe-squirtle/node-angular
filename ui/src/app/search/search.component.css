@@ -1,0 +1,18 @@
+.nav-search-input{
+    background-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color:white;
+}
+
+.nav-search-input:focus{
+    background-color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color:white;
+}
+
+
+.dropdown-menu { background-color: black;}

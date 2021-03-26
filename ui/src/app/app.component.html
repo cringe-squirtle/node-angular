@@ -1,0 +1,35 @@
+<nav class="navbar navbar-dark navbar-expand-md topnav-fixed">
+    <a class="navbar-brand" [routerLink]="['/']">USC Films</a>
+    <button class="navbar-toggler d-lg-none" type="button" (click)="isCollapsed = !isCollapsed"
+        [attr.aria-expanded]="!isCollapsed" aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']"
+                    [ngStyle]="{'color': navTabAt.home ? 'white' : navHover.home ? 'lightgray' : 'darkgray' }"
+                    (mouseenter)='setNavHover("home")' (mouseleave)='cancelNavHover()'>Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['mylist']"
+                    [ngStyle]="{'color':navTabAt.mylist ? 'white' : navHover.mylist ? 'lightgray' : 'darkgray'}"
+                    (mouseenter)='setNavHover("mylist")' (mouseleave)='cancelNavHover()'>My List</a>
+            </li>
+        </ul>
+        <div class="mt-2 mt-md-0">
+            <app-search></app-search>
+        </div>
+    </div>
+</nav>
+<div style="min-height: calc(100vh - 64px);">
+    <div style="margin-top: 64px;min-height: calc(100vh - 112px);">
+        <router-outlet></router-outlet>
+        <div class="push"></div>
+    </div>
+
+    <footer class="footer">Powered By TMDB. Developed By
+        Shaw
+    </footer>
+</div>

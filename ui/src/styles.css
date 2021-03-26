@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+html{
+    height: 100%;
+    margin: 0;
+    background-color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+body{
+    min-height: calc(100% - 64px);
+    margin: 0px;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    scrollbar-color: white black
+}
+
+a{
+    color: inherit;
+}
+
+.invisible{
+    display: none;
+}
+body::-webkit-scrollbar {
+    width: 10px;               
+  
+}
+  body::-webkit-scrollbar-track {
+    background: rgb(2, 2, 70);
+    border: silver 1px solid;   
+    border-radius: 10px; 
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: silver;    
+    border-radius: 20px;       
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: lightgray;    
+}
+  
+  .modal{
+      width: 100vw;
+      height: 100vh;
+  }
+  
+  .modal-lg .modal-xl   .modal-dialog{
+      max-width: 80vw;
+      width: 80vw;
+      margin-left: 10vw;
+  }
+  

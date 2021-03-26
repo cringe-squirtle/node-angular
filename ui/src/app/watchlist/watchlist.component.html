@@ -1,0 +1,35 @@
+<h1 class='watchlist-title' [ngStyle]="{
+    'width':screen_big ? '72vw' : '90vw'
+}" *ngIf="watchlist.length>0">
+    My Watchlist
+</h1>
+
+<h1 class='watchlist-title' [ngStyle]="{
+    'width':screen_big ? '72vw' : '90vw',
+    'text-align':'center'
+}" *ngIf="watchlist.length==0">
+    No items found in Watchlist
+</h1>
+
+<div class='watchlist-section' [ngStyle]="{
+    'width':screen_big ? '84vw' : '90vw',
+    'flex-direction': screen_big ? 'row':'column',
+    'justify-content': screen_big ? 'start':'center'
+}" (resized)='sectionOnResize($event)'>
+
+    <div class='watchlist-wrapper' *ngFor="let item of watchlist; index as i" [ngStyle]="{
+        'margin-left':'calc(10% / '+line_nm*2+')',
+        'margin-right':'calc(10% / '+line_nm*2+')',
+        'width': cardWidth,
+        'height': cardHeight+'px'
+    }" (mouseenter)='setHover(i)' (mouseleave)='clearHover(i)'>
+
+        <div class='img' [routerLink]="['/watch/'+item.type+'/'+item.id]"
+            [ngStyle]="{'background-image':'url('+item.image+')'}">
+            <div class="image-title" *ngIf="hovers[i]" [ngStyle]="{
+                'font-size': 'calc(8vw / '+line_nm+')'
+            }">{{item.title}}</div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+
+
+.topnav-fixed{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+    background: black;
+}
+
+.footer,
+.push {
+  height: 48px;
+  text-align: center;
+}

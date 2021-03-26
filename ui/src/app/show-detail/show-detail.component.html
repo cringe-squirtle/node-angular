@@ -1,0 +1,106 @@
+<div class='video-section' [ngStyle]="{
+    'width':screen_big ? '84vw' : '90vw',
+    'flex-direction': screen_big ? 'row':'column'
+}" (resized)='videoSectionOnResize($event)'>
+    <youtube-player videoId="{{video_key}}" class="youtube" width="{{video_width}}" height="{{video_height}}">
+    </youtube-player>
+    <div [ngStyle]="{
+        'width':detail_width+'px',
+        'font-size': screen_big?'1.2vw':'3vw'
+    }" class="video-detail">
+        <p style="color: white;" [ngStyle]="{
+            'font-size': screen_big?'1.8vw':'5vw'
+        }">{{show_detail.title}}</p>
+        <span class='tagline'>{{show_detail.tagline}}</span>
+        <p>{{detail_prop.left}}<span class='star'>&#9733;</span>{{detail_prop.right}}</p>
+        <span><span style="color:white">Genres: </span>{{detail_prop.genres}}</span>
+        <p><span style="color:white">Spoken Languages: </span>{{detail_prop.lan}}</p>
+        <button type="button" class="btn btn-primary add-list-btn" (click)="watchlist_btn_click()" [ngStyle]="{
+                'width': screen_big?'20vw':'50vw',
+                'height':screen_big?'4h':'5vh',
+                'font-size': screen_big?'1.5vw':'3vw'
+            }">{{watchlist_btn_text}}</button>
+        <div class="{{'alert add-list-alert '+alert_type}}" role="alert" *ngIf="watchlist_alert_show">
+            {{watchlist_alert_text}}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                class="bi bi-x alert-cross" viewBox="0 0 16 16" (click)="watchlist_alert_close()">
+                <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="description-section" [ngStyle]="{
+    'width':screen_big ? '84vw' : '90vw',
+    'font-size': screen_big?'1.2vw':'3vw'
+}">
+    <span [ngStyle]="{'font-size': screen_big?'3.5vw':'5vw'}">Description</span>
+    <p class='overview'>{{show_detail.overview || 'not available'}}</p>
+</div>
+
+<div class="share" [ngStyle]="{
+    'width':screen_big ? '84vw' : '90vw',
+    'font-size': screen_big?'1.2vw':'3vw'
+}">
+    <span [ngStyle]="{'font-size': screen_big?'3.5vw':'5vw'}">Share</span>
+    <div>
+        <a style="color: #1DA1F2;" class="share-icon" target="_blank"
+            href="{{'https://twitter.com/intent/tweet?text=Watch '+show_detail.title+'&url=https://www.youtube.com/watch?v='+video_key+ '&hashtags=USC,CSCI571,FightOn'}}"><i
+                class="fab fa-twitter"></i></a>
+        <a target="_blank" style="color: #4e71ba;"
+            href="{{'https://www.facebook.com/sharer/sharer.php?u=https://www.youtube.com/watch?v='+video_key}}"
+            class="share-icon"><i class="fab fa-facebook-square"></i></a>
+    </div>
+</div>
+
+<div class="cast" [ngStyle]="{
+    'width':screen_big ? '84vw' : '90vw',
+    'font-size': screen_big?'1.2vw':'3vw'
+}">
+    <span [ngStyle]="{'font-size': screen_big?'3.5vw':'5vw'}">Full Cast and Crew</span>
+    <div class="cast-wrapper scroll-color" [ngStyle]="{
+        'padding-bottom':screen_big ? '18px':'20%'
+    }">
+        <div class="cast-prime">
+            <div class="cast-total" *ngFor="let item of cast" [ngStyle]="{
+                'width': screen_big? 'calc(84vw * '+cardWidth+')':'calc(90vw * '+cardWidth+')',
+                'height':cardHeight+'px',
+                'margin-left':'calc(10% / '+line_nm*2+')',
+                'margin-right':'calc(10% / '+line_nm*2+')'
+            }">
+                <app-cast-card
+                    [param]="{'width':cardWidth, 'height':cardHeight, 'cast':item, 'size':line_nm, 'screen_big':screen_big}">
+                </app-cast-card>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="reviews" [ngStyle]="{
+    'width':screen_big ? '84vw' : '90vw',
+    'font-size': screen_big?'1.2vw':'3vw'
+}">
+    <span [ngStyle]="{'font-size': screen_big?'3.5vw':'5vw'}">Reviews</span>
+    <span [ngStyle]="{'font-size': screen_big?'3.5vw':'5vw', 'color':'gray'}"> {{reviews.length}}</span>
+
+    <div class='reviews-wrapper'>
+        <div *ngFor="let item of reviews">
+            <app-show-review [param]="{
+                'review':item,
+                'size':line_nm
+            }"></app-show-review>
+        </div>
+    </div>
+
+</div>
+
+<div [ngStyle]="{'width':'96vw', 'margin':'auto','margin-top':'32px'}">
+    <app-line-list-shows [items]="recommend_items" [type]="recommend_type" [title]="recommend_title"
+        *ngIf="recommend_items.length>0"></app-line-list-shows>
+</div>
+<div [ngStyle]="{'width':'96vw', 'margin':'auto','margin-top':'32px'}">
+    <app-line-list-shows [items]="similar_items" [type]="similar_type" [title]="similar_title"
+        *ngIf="similar_items.length>0"></app-line-list-shows>
+</div>

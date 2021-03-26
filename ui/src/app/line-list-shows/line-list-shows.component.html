@@ -1,0 +1,26 @@
+<h1 id='title' [ngStyle]="{
+    'width': hoverOff? '78vw' : '60vw'
+}">{{title}}</h1>
+<div style="margin-top: 32px;" id='wrapper'>
+    <ngb-carousel #carousel interval="false" id='current-playing-movies-wrapper'>
+        <ng-template ngbSlide *ngFor="let item of shows; index as i" class="line">
+            <div class='line' [ngStyle]="{
+                'width': hoverOff? '78vw' : '60vw'
+            }">
+                <div class="item" *ngFor="let card of item; index as j">
+                    <a [routerLink]="['/watch/', card.type, card.id]">
+                        <div class='img' [ngStyle]="{
+                        'width': 'calc(78vw * '+cardWidth+')', 
+                        'height': 'calc(78vw * '+cardWidth+ ' * ' +card.height/card.width+')',
+                        'background-image':'url('+card.image+')'
+                    }" (mouseenter)='setHover(i, j)' (mouseleave)='clearHover(i, j)'>
+                            <div class="image-title" *ngIf="!hoverOff || hovers[i][j]" [ngStyle]="{
+                            'font-size': hoverOff ? '1.5vw' : '7vw'
+                        }">{{card.title}}</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+</div>

@@ -1,0 +1,6 @@
+<app-current-playing-movie></app-current-playing-movie>
+
+<div *ngFor="let i of ['0','1','2','3','4','5','6']" [ngStyle]="{'width':'96vw', 'margin':'auto','margin-top':'32px'}">
+    <app-line-list-shows [items]="sections[i].items" [title]="sections[i].title" [type]="sections[i].type"
+        *ngIf="sections[i].items.length>0"></app-line-list-shows>
+</div>
