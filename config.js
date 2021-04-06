@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const api_key = 'e46f50f1468f97c817ce9f7598851c3d'
 const debugging = process.env.NODE_ENV === 'production' ? false : true
-const api_url = debugging ? 'http://localhost:5000' : 'https://tmdb-node-ng.uk.r.appspot.com'
+const api_url = debugging ? 'http://localhost:5000' : 'https://nodetmdbangular.ue.r.appspot.com'
 const image_url = 'https://image.tmdb.org/t/p'
 
 const placeholder = {

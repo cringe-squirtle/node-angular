@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import dateFormat from 'dateformat'
 
 @Component({
     selector: 'app-show-review',
@@ -26,8 +25,12 @@ export class ShowReviewComponent implements OnInit {
         this.content = review.content;
         this.rate = review.rating || 0;
         this.url = review.url;
-        this.date = dateFormat(new Date(review.created_at), 'mmmm d, dddd, yyyy, h:MM:ss TT')
 
+        const months = ['January', 'Feburary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+        const date = new Date(review.created_at)
+        const hour = date.getHours() % 12
+        this.date = `${months[date.getMonth()]} ${date.getDate()}, ${days[date.getDay()]}, ${date.getFullYear()}, ${hour ? hour : 12}:${date.getMinutes()}:${date.getSeconds()} ${date.getHours() >= 12 ? 'PM' : 'AM'}`
     }
 
 }

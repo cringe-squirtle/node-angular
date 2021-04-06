@@ -1,4 +1,4 @@
-const api_url = 'https://tmdb-node-ng.uk.r.appspot.com/api'
+const api_url = 'https://nodetmdbangular.ue.r.appspot.com/api'
 
 const urls = {
     a: x => console.log(x),
@@ -35,6 +35,10 @@ const urls = {
     cast: {
         cast_detail: id => `${api_url}/cast_detail/${id}`,
         cast_external_ids: id => `${api_url}/cast_external_ids/${id}`,
+    },
+
+    image: {
+
     }
 
 
