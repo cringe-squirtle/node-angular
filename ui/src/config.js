@@ -1,4 +1,4 @@
-const api_url = 'https://nodetmdbangular.ue.r.appspot.com/api'
+const api_url = 'https://tmdb-node.ue.r.appspot.com/api'
 
 const urls = {
     search_multi: query => `${api_url}/search_multi/${query}`,
