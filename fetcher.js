@@ -67,7 +67,8 @@ function fetch_popular_movie(callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -82,7 +83,8 @@ function fetch_top_movie(callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -112,7 +114,7 @@ function fetch_current_playing_movie(callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.backdrop_path)
+                image: config.urls.poster(item.poster_path)
             })
         }
         callback(ans)
@@ -127,7 +129,8 @@ function fetch_recommended_movie(id, callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -142,7 +145,8 @@ function fetch_similar_movie(id, callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -236,7 +240,8 @@ function fetch_popular_tv(callback) {
             ans.push({
                 id: item.id,
                 title: item.name,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -251,7 +256,8 @@ function fetch_top_tv(callback) {
             ans.push({
                 id: item.id,
                 title: item.name,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -281,7 +287,8 @@ function fetch_recommended_tv(id, callback) {
             ans.push({
                 id: item.id,
                 title: item.name,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -296,7 +303,8 @@ function fetch_similar_tv(id, callback) {
             ans.push({
                 id: item.id,
                 title: item.name,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                date: item.release_date || item.first_air_date
             })
         }
         callback(ans)
@@ -327,7 +335,7 @@ function fetch_tv_details(id, callback) {
             title: data.name,
             genres: data.genres,
             spoken_languages: data.spoken_languages,
-            first_air_data: data.first_air_data,
+            first_air_date: data.first_air_date,
             episode_run_time: data.episode_run_time,
             overview: data.overview,
             vote_average: data.vote_average,

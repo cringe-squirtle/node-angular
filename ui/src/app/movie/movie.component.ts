@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import urls from '../../config'
-import { ShowDetailComponent } from '../show-detail/show-detail.component'
 
 
 @Component({
