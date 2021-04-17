@@ -68,7 +68,8 @@ function fetch_popular_movie(callback) {
                 id: item.id,
                 title: item.title,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'movie',
             })
         }
         callback(ans)
@@ -84,7 +85,8 @@ function fetch_top_movie(callback) {
                 id: item.id,
                 title: item.title,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'movie',
             })
         }
         callback(ans)
@@ -99,7 +101,8 @@ function fetch_trending_movie(callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                type: 'movie',
             })
         }
         callback(ans)
@@ -114,7 +117,8 @@ function fetch_current_playing_movie(callback) {
             ans.push({
                 id: item.id,
                 title: item.title,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                type: 'movie',
             })
         }
         callback(ans)
@@ -130,7 +134,8 @@ function fetch_recommended_movie(id, callback) {
                 id: item.id,
                 title: item.title,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'movie',
             })
         }
         callback(ans)
@@ -146,7 +151,8 @@ function fetch_similar_movie(id, callback) {
                 id: item.id,
                 title: item.title,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'movie',
             })
         }
         callback(ans)
@@ -241,7 +247,8 @@ function fetch_popular_tv(callback) {
                 id: item.id,
                 title: item.name,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'tv',
             })
         }
         callback(ans)
@@ -257,7 +264,8 @@ function fetch_top_tv(callback) {
                 id: item.id,
                 title: item.name,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'tv',
             })
         }
         callback(ans)
@@ -272,7 +280,8 @@ function fetch_trending_tv(callback) {
             ans.push({
                 id: item.id,
                 title: item.name,
-                image: config.urls.poster(item.poster_path)
+                image: config.urls.poster(item.poster_path),
+                type: 'tv',
             })
         }
         callback(ans)
@@ -288,7 +297,8 @@ function fetch_recommended_tv(id, callback) {
                 id: item.id,
                 title: item.name,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'tv',
             })
         }
         callback(ans)
@@ -304,7 +314,8 @@ function fetch_similar_tv(id, callback) {
                 id: item.id,
                 title: item.name,
                 image: config.urls.poster(item.poster_path),
-                date: item.release_date || item.first_air_date
+                date: item.release_date || item.first_air_date,
+                type: 'tv',
             })
         }
         callback(ans)
